@@ -1,0 +1,26 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: boom
+spec:
+  selector:
+    matchLabels:
+      app: boom
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: boom
+    spec:
+      containers:
+      - name: boom
+        image: eu.gcr.io/kedare-lab/boom:3
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: 64M
+            cpu: 0.2
+          limits:
+            memory: 64M
+            cpu: 0.5

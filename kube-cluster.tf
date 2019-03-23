@@ -1,6 +1,6 @@
-resource "google_container_cluster" "gc-euw3-k8s-meetup-lab" {
-  name               = "gc-euw3-k8s-meetup-lab"
-  region               = "europe-west3"
+resource "google_container_cluster" "gc-euw1-k8s-meetup-lab" {
+  name               = "gc-euw1-k8s-meetup-lab"
+  region               = "europe-west1"
 
   min_master_version = "1.11.7-gke.12"
   node_version = "1.11.7-gke.12"
@@ -19,8 +19,8 @@ resource "google_container_cluster" "gc-euw3-k8s-meetup-lab" {
 
 resource "google_container_node_pool" "autoscaling-pool" {
   name       = "autoscaling-pool"
-  region     = "europe-west3"
-  cluster    = "${google_container_cluster.gc-euw3-k8s-meetup-lab.name}"
+  region     = "europe-west1"
+  cluster    = "${google_container_cluster.gc-euw1-k8s-meetup-lab.name}"
   node_count = 1
 
   autoscaling {
