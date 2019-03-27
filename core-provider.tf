@@ -1,6 +1,6 @@
 provider "google" {
   project = "kedare-lab"
-  region  = "europe-west3"
+  region  = "europe-west1"
 }
 
 
